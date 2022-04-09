@@ -1,13 +1,13 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-import Homepage from "./pages/homepage/homepage.component";
+import Home from "./routes/home/Home";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Homepage />
-    </div>
+    <Routes>
+      <Route path="/" index element={<Home />} />
+    </Routes>
   );
-}
+};
 
 export default App;
