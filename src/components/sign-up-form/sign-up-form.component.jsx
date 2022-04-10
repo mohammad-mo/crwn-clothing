@@ -43,10 +43,13 @@ const SignUpForm = () => {
       await createUserDocumnetFromAuth(user, { displayName })
       resetFormFeilds()
     } catch (err) {
-      if (err.code === 'auth/email-already-in-use')
-        alert('Cannot create user, email already in use')
-      else {
-        console.log('user creation encounted an error', err.message)
+      switch (err.code) {
+        case 'auth/email-already-in-use':
+          alert('Cannot create user, email already in use')
+        case 'auth/weak-password':
+          alert('Password should be at least 6 characters')
+        default:
+          console.log(err.message)
       }
     }
   }
