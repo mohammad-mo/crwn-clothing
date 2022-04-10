@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 
-import Navigation from './routes/navigation/Navigation'
-import Home from './routes/home/Home'
-import SignIn from './routes/sign-in/SignIn'
+import Navigation from './routes/navigation/navigation'
+import Home from './routes/home/home'
+import SignIn from './routes/sign-in/sign-in'
 
 const Shop = () => {
   return <h1>Shop component</h1>
