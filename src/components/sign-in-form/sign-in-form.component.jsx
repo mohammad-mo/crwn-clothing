@@ -36,7 +36,7 @@ const SignInForm = () => {
     e.preventDefault()
 
     try {
-      const { user } = await signInAuthUserWithEmailAndPassword(email, password)
+      await signInAuthUserWithEmailAndPassword(email, password)
       resetFormFeilds()
     } catch (err) {
       switch (err.code) {
