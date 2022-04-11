@@ -46,8 +46,10 @@ const SignUpForm = () => {
       switch (err.code) {
         case 'auth/email-already-in-use':
           alert('Cannot create user, email already in use')
+          break
         case 'auth/weak-password':
           alert('Password should be at least 6 characters')
+          break
         default:
           console.log(err.message)
       }
