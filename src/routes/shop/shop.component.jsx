@@ -1,19 +1,28 @@
-import React, { useContext } from 'react'
-import { ProductsContext } from '../../contexts/products.context'
+import React, { Fragment, useContext } from 'react'
+import { CategoriesContext } from '../../contexts/categories.context'
 
 import ProductCard from '../../components/product-card/product-card.component'
 
 import './shop.styles.scss'
 
 const Shop = () => {
-  const { products } = useContext(ProductsContext)
+  const { categoriesMap } = useContext(CategoriesContext)
 
   return (
-    <div className='products-container'>
-      {React.Children.toArray(
-        products.map((product) => <ProductCard product={product} />),
-      )}
-    </div>
+    <>
+      {Object.keys(categoriesMap).map((title) => (
+        <Fragment key={title}>
+          <h2>{title}</h2>
+          <div className='products-container'>
+            {React.Children.toArray(
+              categoriesMap[title].map((product) => (
+                <ProductCard product={product} />
+              )),
+            )}
+          </div>
+        </Fragment>
+      ))}
+    </>
   )
 }
 
