@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 import {
   signInWithGooglePopup,
@@ -19,6 +20,8 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
 
+  const navigate = useNavigate()
+
   const resetFormFeilds = () => {
     setFormFields(defaultFormFields)
   }
@@ -29,14 +32,22 @@ const SignInForm = () => {
   }
 
   const signInWithGoogle = async () => {
-    await signInWithGooglePopup()
+    const googleUserCredential = await signInWithGooglePopup()
+
+    if (googleUserCredential) navigate('/')
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     try {
-      await signInAuthUserWithEmailAndPassword(email, password)
+      const userCredential = await signInAuthUserWithEmailAndPassword(
+        email,
+        password,
+      )
+
+      if (userCredential) navigate('/')
+
       resetFormFeilds()
     } catch (err) {
       switch (err.code) {

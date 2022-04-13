@@ -29,3 +29,51 @@
     font-size: 36px;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .checkout-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .checkout-container {
+    width: 100%;
+
+    .checkout-header {
+      .header-block {
+        &:last-child {
+          width: 10%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .checkout-container {
+    width: 100%;
+
+    .checkout-header {
+      .header-block {
+        &:last-child {
+          width: 12%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .checkout-container {
+    width: 100%;
+
+    .checkout-header {
+      .header-block {
+        &:last-child {
+          width: 14%;
+        }
+      }
+    }
+  }
+}
