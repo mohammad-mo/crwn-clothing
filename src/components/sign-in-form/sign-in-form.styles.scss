@@ -1,4 +1,4 @@
-.sign-up-container {
+.sign-in-container {
   display: flex;
   flex-direction: column;
   width: 380px;
@@ -10,5 +10,17 @@
   .buttons-container {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .sign-in-container {
+    align-items: center;
+    width: 100%;
+
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
