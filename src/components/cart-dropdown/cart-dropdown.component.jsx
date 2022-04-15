@@ -18,13 +18,15 @@ const CartDropdown = () => {
   }
 
   return (
-    <div className='cart-dropdown-container'>
-      <div className='cart-items'>
-        {React.Children.toArray(
-          cartItems.map((item) => <CartItem cartItem={item} />),
-        )}
+    <div className='cart-dropdown-yey'>
+      <div className='cart-dropdown-container'>
+        <div className='cart-items'>
+          {React.Children.toArray(
+            cartItems.map((item) => <CartItem cartItem={item} />),
+          )}
+        </div>
+        <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
       </div>
-      <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
     </div>
   )
 }
