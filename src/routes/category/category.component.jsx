@@ -21,8 +21,8 @@ const Category = () => {
       <h2 className='category-title'>{category.toUpperCase()}</h2>
       <div className='category-container'>
         {products &&
-          products.map((product) =>
-            React.Children.toArray(<ProductCard product={product} />),
+          React.Children.toArray(
+            products.map((product) => <ProductCard product={product} />),
           )}
       </div>
     </>
