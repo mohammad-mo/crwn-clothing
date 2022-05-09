@@ -3,7 +3,7 @@ import { useState } from 'react'
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumnetFromAuth,
-} from '../../utils/firebase.config'
+} from '../../utils/reducer/firebase.config'
 
 import Button from '../button/button.component'
 import FormInput from '../form-input/form-input.component'

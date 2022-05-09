@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
-} from '../../utils/firebase.config'
+} from '../../utils/reducer/firebase.config'
 
 import Button from '../button/button.component'
 import FormInput from '../form-input/form-input.component'

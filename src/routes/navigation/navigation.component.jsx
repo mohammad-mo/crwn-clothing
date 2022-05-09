@@ -7,7 +7,7 @@ import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component
 
 import { Outlet, Link } from 'react-router-dom'
 
-import { signOutUser } from '../../utils/firebase.config'
+import { signOutUser } from '../../utils/reducer/firebase.config'
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg'
 
