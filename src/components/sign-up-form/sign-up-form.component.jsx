@@ -2,9 +2,8 @@ import { useState } from 'react'
 
 import {
   createAuthUserWithEmailAndPassword,
-  createUserDocumnetFromAuth,
-} from '../../utils/reducer/firebase.config'
-
+  createUserDocumentFromAuth,
+} from '../../utils/firebase/firebase.config'
 import Button from '../button/button.component'
 import FormInput from '../form-input/form-input.component'
 
@@ -40,7 +39,7 @@ const SignUpForm = () => {
 
     try {
       const { user } = await createAuthUserWithEmailAndPassword(email, password)
-      await createUserDocumnetFromAuth(user, { displayName })
+      await createUserDocumentFromAuth(user, { displayName })
       resetFormFeilds()
     } catch (err) {
       switch (err.code) {

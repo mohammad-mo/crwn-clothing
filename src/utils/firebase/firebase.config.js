@@ -73,7 +73,7 @@ export const getCategoriesAndDocumnets = async () => {
   return categoryMap
 }
 
-export const createUserDocumnetFromAuth = async (
+export const createUserDocumentFromAuth = async (
   userAuth,
   additionalInformation = {},
 ) => {
@@ -116,7 +116,7 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
 export const signOutUser = async () => await signOut(auth)
 
-export const onAuthStateChangeListener = (callback) =>
+export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback)
 
 /**
