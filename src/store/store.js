@@ -2,7 +2,7 @@ import { compose, createStore, applyMiddleware } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import createSagaMiddleware from 'redux-saga'
-import logger from 'redux-logger'
+// import logger from 'redux-logger'
 
 import { rootReducer } from './root-reducer'
 import { rootSaga } from './root-saga'
@@ -10,8 +10,7 @@ import { rootSaga } from './root-saga'
 const sagaMiddleware = createSagaMiddleware()
 
 const middleWares = [
-  process.env.NODE_ENV === 'development' && logger,
-  sagaMiddleware,
+  process.env.NODE_ENV === 'development' && sagaMiddleware,
 ].filter(Boolean)
 
 const composeEnhancer =
