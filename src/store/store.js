@@ -10,7 +10,7 @@ import { rootSaga } from './root-saga'
 const sagaMiddleware = createSagaMiddleware()
 
 const middleWares = [
-  process.env.NODE_ENV === 'development' && sagaMiddleware,
+  process.env.NODE_ENV !== 'development' && sagaMiddleware,
 ].filter(Boolean)
 
 const composeEnhancer =
